@@ -70,7 +70,7 @@ console.log(animals[2]); //→rabbit
 //配列の繰り返し
 const animals = ["dog", "cat", "sheep"];　//インデント番号は0~2。要素は3つ
 // for文を用いて、配列の値を順にコンソールに出力してください
-for (let i = 0; i < 3; i += 1) {　//変数名はiを用いる。変数の値はインデント番号「0」から始めることに注意！ i < 3(要素数)
+for (let i = 0; i < 3; i += 1) {　//animalsのインデント番号を変更、変数名はiを用いる。代入する変数の値はインデント番号「0」から始めることに注意！ i < 3(要素数)
   console.log(animals[i]); //条件にある要素を出力→dog,cat,sheep
 }
 
@@ -80,4 +80,54 @@ console.log(animals.length); //定数名.lengthとすることで、配列の要
 // lengthを用いて条件式を書き換えてください
 for (let i = 0; i < animals.length; i += 1) { //「i < 8」を「i < animals.length」に書き換え可能
   console.log(animals[i]); //条件にある要素を出力→dog,cat,sheep,rabbit,monkey,tiger,bear,elephant
+}
+
+
+//オブジェクト(配列と同じく複数のデータをまとめて管理。それぞれの値にプロパティと呼ばれる名前をつけて管理)
+// 定数characterを定義し、指定されたオブジェクトを代入してください
+const character = {name:"にんじゃわんこ",age:14};
+// characterの値を出力してください
+console.log(character); //→{name:"にんじゃわんこ",age:14}
+
+
+//オブジェクトの値の取得・更新
+const character = {name: "にんじゃわんこ", age: 14};
+// characterのnameの値を出力してください
+console.log(character.name);　//→にんじゃわんこ
+// characterのageの値を「20」に更新してください
+character.age = 20;
+// characterをコンソールに出力してください
+console.log(character);　//→{name: "にんじゃわんこ", age: 20}
+
+
+//オブジェクトを要素に持つ配列
+const characters = [
+  {name: "にんじゃわんこ", age: 14}, //インデント番号「0」
+  {name: "ひつじ仙人", age: 1000}   //インデント番号「1」
+];
+// charactersの1つ目の要素をコンソールに出力してください
+console.log(characters[0]); //→{name: "にんじゃわんこ", age: 14}
+// charactersの2つ目の要素の「name」に対応する値をコンソールに出力してください
+console.log(characters[1].name); //→ひつじ仙人
+
+const characters = [
+  {name: "にんじゃわんこ", age: 14},
+  {name: "ひつじ仙人", age: 100},
+  {name: "ベイビーわんこ", age: 5},
+]; //charactersにオブジェクトを要素に持つ配列を代入
+
+// for文を完成させてください
+for (let i = 0; i < characters.length; i += 1) {　//name・ageそれぞれ出力するのは手間がかかるので繰り返し処理。
+  //charactersのインデント番号を変更、変数名はiを用いる。代入する変数の値はインデント番号「0」から始めることに注意！
+  //「i < 3」を「i < animals.length」に書き換え。
+  console.log("--------------------");
+  
+  // 定数characterを定義してください
+  const character = characters[i]; //charactersの代入内容とfor文内の内容をcharacterに代入
+  
+  // 「名前は〇〇です」を出力してください
+  console.log("名前は" + character.name + "です");　//「文字列の連結」もしくは「テンプレートリテラル」
+  
+  // 「〇〇歳です」を出力してください
+  console.log(character.age + "歳です"); //→出力(名前はにんじゃわんこです　14歳です　名前はひつじ仙人です　100歳です　名前はベイビーわんこです　5歳です)
 }
