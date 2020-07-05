@@ -1,7 +1,7 @@
-# Progate　[JavaScript(ES6) 学習コース② 1周目]
+# Progate　[JavaScript(ES6) 学習コース② 2周目]
 
 ## JavaScriptの学習②
-1周目のリポジトリ。  
+1周目学習終了、2周目のリポジトリ。  
 しっかり定着するよう繰り返し行う。(上限３周目まで)  
 *学習範囲*   
 繰り返し処理〜undefined
