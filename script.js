@@ -156,7 +156,7 @@ for (let i = 0; i < characters.length; i += 1) {　
 
 
 // 13.undefinedの対応(1)
-// 「undefined」は配列の存在しないインデックス番号の要素や、オブジェクトの存在しないプロパティの要素を取得しようとすると出力される)
+// 「undefined」は配列の存在しないインデックス番号の要素や、オブジェクトの存在しないプロパティの要素を取得しようとすると出力される
 const characters = [
   {name: "にんじゃわんこ", age: 14},
   {name: "ひつじ仙人", age: 100},
@@ -192,3 +192,48 @@ for (let i = 0; i < characters.length; i += 1) {
   }
 }
 // →出力(名前はにんじゃわんこです　14歳です　名前はひつじ仙人です　100歳です　名前はベイビーわんこです　5歳です　名前はとりずきんです　年齢は秘密です)
+
+
+// 15.オブジェクト内にオブジェクトを要素に持つオブジェクト
+const cafe = {
+  name: "Progateカフェ",
+  //オブジェクトの中にオブジェクト
+  businessHours: {
+  // businessHoursの値に指定されたオブジェクトを代入してください
+    opening:"10:00(AM)", //「,」つけること注意
+    closing:"8:00(PM)"
+  }, //「,」つけること注意
+};
+
+// 「店名:〇〇」を出力してください
+console.log("店名:" + cafe.name);
+
+//「営業時間:〇〇から△△」を出力してください
+// オブジェクトの中のオブジェクトを出力する時は、大元のオブジェクト名.オブジェクト.オブジェクト
+console.log("営業時間:" + cafe.businessHours.opening + "から" + cafe.businessHours.closing)
+// →(店名:Progateカフェ　営業時間:10:00(AM)から8:00(PM))
+
+
+// 16.オブジェクト内に配列とオブジェクトを要素に持つオブジェクト
+const cafe = {
+  name: "Progateカフェ",
+  businessHours: { 
+    opening: "10:00(AM)",
+    closing: "8:00(PM)"
+  },
+  // menusプロパティに配列を代入してください
+  // オブジェクトの中に配列「：」をつけることに注意！
+  menus:["コーヒー","紅茶","チョコレートケーキ"]
+};
+
+console.log(`店名: ${cafe.name}`);
+console.log(`営業時間:${cafe.businessHours.opening}から${cafe.businessHours.closing}`);
+console.log(`----------------------------`);
+console.log("おすすめメニューはこちら");
+
+// for文を用いて配列menusの中身を表示させてください
+// cafe.menus.lengthになることに注意！
+for (let i = 0; i < cafe.menus.length; i += 1) {
+  console.log(cafe.menus[i]);　
+}
+// →店名:Progateカフェ　営業時間:10:00(AM)から8:00(PM)　おすすめメニューはこちら　コーヒー,紅茶,チョコレートケーキ
