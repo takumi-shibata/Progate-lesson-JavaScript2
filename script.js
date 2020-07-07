@@ -89,3 +89,84 @@ for (let i = 0; i < animals.length; i += 1) {
   console.log(animals[i]);
 }
 // →dog,cat,sheep,rabbit,monkey,tiger,bear,elephant
+
+
+// 9.オブジェクト{プロパティ1:値1, プロパティ2:値2...}
+// 定数characterを定義し、指定されたオブジェクトを代入してください
+const character = {name:"にんじゃわんこ",age:14};
+// characterの値を出力してください
+console.log(character);
+// →{name:"にんじゃわんこ",age:14}
+
+
+// 10.オブジェクトの値の取得・更新
+const character = {name: "にんじゃわんこ", age: 14};
+// characterのnameの値を出力してください
+console.log(character.name);
+// →にんじゃわんこ
+
+// characterのageの値を「20」に更新してください
+character.age = 20;
+// characterをコンソールに出力してください
+console.log(character);
+// →{name: "にんじゃわんこ", age: 20}
+
+
+// 11.オブジェクトを要素に持つ配列(1)
+const characters = [
+  {name: "にんじゃわんこ", age: 14}, //インデント番号「0」
+  {name: "ひつじ仙人", age: 1000}   //インデント番号「1」
+];
+
+// charactersの1つ目の要素をコンソールに出力してください
+console.log(characters[0]);
+// →{name: "にんじゃわんこ", age: 14}
+
+// charactersの2つ目の要素の「name」に対応する値をコンソールに出力してください
+console.log(characters[1].name);
+// →ひつじ仙人
+
+
+// 12.オブジェクトを要素に持つ配列(2)
+const characters = [　
+  {name: "にんじゃわんこ", age: 14},
+  {name: "ひつじ仙人", age: 100},
+  {name: "ベイビーわんこ", age: 5},
+]; 
+
+// for文を完成させてください
+// インデント番号ごとに出力するのは手間がかかるので繰り返し処理
+for (let i = 0; i < characters.length; i += 1) {　
+  // インデント番号の繰り返し処理、変数名はiを用いる。代入する変数の値はインデント番号「0」から始めることに注意！
+  //「i < 3(要素数)」を「i < characters.length」に書き換え。
+  console.log("--------------------"); 
+
+  // 定数characterを定義してください
+  // characterにcharactersの代入内容と繰り返し表示を行うインデント番号を代入
+  const character = characters[i]; 
+
+  // 「名前は〇〇です」を出力してください
+  //「文字列の連結 "" + ""」もしくは「テンプレートリテラル ${}」
+  console.log("名前は" + character.name + "です");
+
+  // 「〇〇歳です」を出力してください
+  console.log(character.age + "歳です"); 
+}
+//　→(名前はにんじゃわんこです　14歳です　名前はひつじ仙人です　100歳です　名前はベイビーわんこです　5歳です)
+
+
+// 13.undefinedの対応(1)
+// 「undefined」は配列の存在しないインデックス番号の要素や、オブジェクトの存在しないプロパティの要素を取得しようとすると出力される)
+const characters = [
+  {name: "にんじゃわんこ", age: 14},
+  {name: "ひつじ仙人", age: 100},
+  {name: "ベイビーわんこ", age: 5},
+  {name: "とりずきん"}
+];
+// とりずきんのageプロパティがないので、出力するときに「undefined」と出る
+//　→(名前はにんじゃわんこです　14歳です　名前はひつじ仙人です　100歳です　名前はベイビーわんこです　5歳です　名前はとりずきんです　undefined歳です)
+
+
+
+
+
