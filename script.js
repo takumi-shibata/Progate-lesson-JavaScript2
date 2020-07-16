@@ -153,3 +153,42 @@ for (let i = 0; i < characters.length; i += 1) {　
   console.log(character.age + "歳です"); 
 }
 //　→(名前はにんじゃわんこです　14歳です　名前はひつじ仙人です　100歳です　名前はベイビーわんこです　5歳です)
+
+
+// 13.undefinedの対応(1)
+// 「undefined」は配列の存在しないインデックス番号の要素や、オブジェクトの存在しないプロパティの要素を取得しようとすると出力される
+const characters = [
+  {name: "にんじゃわんこ", age: 14},
+  {name: "ひつじ仙人", age: 100},
+  {name: "ベイビーわんこ", age: 5},
+  {name: "とりずきん"}
+];
+// とりずきんのageプロパティがないので、出力するときに「undefined」と出る
+//　→(名前はにんじゃわんこです　14歳です　名前はひつじ仙人です　100歳です　名前はベイビーわんこです　5歳です　名前はとりずきんです　undefined歳です)
+
+
+// 14.undefinedの対応(2)
+// undefinedを避ける時の処理(条件分岐を使用して処理を分岐させる)
+const characters = [
+  {name: "にんじゃわんこ", age: 14},
+  {name: "ひつじ仙人", age: 100},
+  {name: "ベイビーわんこ", age: 5},
+  {name: "とりずきん"}
+];
+
+for (let i = 0; i < characters.length; i += 1) {
+  console.log("--------------------");  
+  const character = characters[i];  
+  console.log(`名前は${character.name}です`);
+
+  // if文を追加してください
+  // undefinedの処理(条件分岐)　「===」→　a(character.age)が、b(undefined)になる時は(と一致する時は)
+  if (character.age === undefined) {　
+    console.log("年齢は秘密です");
+
+    // if文に該当しない時の処理(character.ageの値が定義されている時の処理)
+  } else {　
+    console.log(character.age + "歳です");
+  }
+}
+// →出力(名前はにんじゃわんこです　14歳です　名前はひつじ仙人です　100歳です　名前はベイビーわんこです　5歳です　名前はとりずきんです　年齢は秘密です)
